@@ -15,16 +15,16 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
 # If you need to source some other scripts, do it here
 
 # Set the username
-$USER_NAME = pi
+USER_NAME=pi
 
 # Python script location
-$TORRBOX_LOC = ~/torrent_box
+TORRBOX_LOC=/home/pi/torrent_box
 
 case "$1" in
   start)
     log_begin_msg "Starting deluged"
 	sudo -u $USER_NAME /usr/bin/deluged
-	sudo -u $USER_NAME $TORRBOX_LOC/torrentbox.py
+	sudo start-stop-daemon --start --background --pidfile /var/run/torrentbox.pid --make-pidfile --user $USER_NAME --chuid $USER_NAME --startas $TORRBOX_LOC/torrentbox.py
     log_end_msg $?
     exit 0
     ;;
