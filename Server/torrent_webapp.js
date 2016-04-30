@@ -6,7 +6,12 @@ var torrent_status = 'Not available';
 var number_of_magnets = 0;
 var magnetJSON = { torrents: [] };
 var get_torrent_pending = false;
-var PASSWORD = 'hello';
+
+// Please setup your own password
+var PASSWORD = 'password';
+
+// Please setup the port of your choice
+var LISTEN_PORT = 8080;
 
 // Add a torrent to the list
 app.get('/addTorrent/:auth/:magnet/:start/:stop', function(req, res){
@@ -108,4 +113,4 @@ app.post('/fullUpdatePi', function(req, res){
 	}
 });
 
-app.listen(8080);
+app.listen(LISTEN_PORT);

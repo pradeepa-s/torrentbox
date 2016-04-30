@@ -3,6 +3,7 @@
 import subprocess
 import datetime
 
+# Set the output directory
 output_dir = "/mnt/external/rpi_movies"
 
 def process_torrent_list(torrent_json):

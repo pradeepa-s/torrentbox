@@ -1,7 +1,9 @@
 import requests
 import json
 
+# Set the server address here
 SERVER_ADD = 'http://54.191.41.142:8080'
+
 GET_TORRENT = '/getTorrent'
 FULL_UPDATE_PI = '/fullUpdatePi'
 SUBMIT_STATUS = '/submitStatus'
