@@ -31,6 +31,7 @@ case "$1" in
   stop)
     log_begin_msg "Stopping deluged"
     	sudo pkill deluged
+	sudo start-stop-daemon --stop --pidfile /var/run/torrentbox.pid --retry 10
     log_end_msg $?
     exit 0
     ;;
