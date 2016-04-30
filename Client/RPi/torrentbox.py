@@ -10,7 +10,8 @@ def execute_app():
 
 	error_state = 0
 	torrent_update = False
-		
+	torr_json = -1
+	
 	# Check whether hdd is mounted
 	if(os_support.check_hdd_mount() == -1):
 		syslog.syslog(syslog.LOG_INFO, 'Hard Disk Not Mounted')
